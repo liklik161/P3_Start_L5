@@ -1,3 +1,6 @@
+from operator import truediv
+
+
 class Product:
     def __init__(self, titel: str, link: str, prijs: str):
         self.titel = titel
@@ -11,3 +14,13 @@ class Product:
         prijs = prijs.replace(",", ".")
         prijs = float(prijs)
         return prijs
+
+    def __eq__(self, ander_product):
+        if self.titel == ander_product.titel:
+            if self.link == ander_product.link:
+                if self.prijs == ander_product.prijs:
+                    if self.categorie == ander_product.categorie:
+                        return True
+        return False
+
+
